@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Verdara Pixel Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside id="sidebar">
+    <div id="input-form">
+      <textarea id="prompt" placeholder="Enter prompt…"></textarea>
+      <button id="generate">Generate</button>
+    </div>
+    <h2>Commands</h2>
+    <dl>
+      <dt>screen-W-H</dt><dd>Canvas size (px)</dd>
+      <dt>age-A</dt><dd>Maturity %</dd>
+      <dt>tall-H</dt><dd>Trunk height (px)</dd>
+      <dt>base-W</dt><dd>Trunk thickness (px)</dd>
+      <dt>taper-T</dt><dd>Taper %</dd>
+      <dt>split-L-A-L2</dt><dd>Split at L, angle A°, length L2</dd>
+      <dt>splits-bendup/ splits-benddown-B</dt><dd>Offset all split angles by –B°/+B°</dd>
+      <dt>branch-L-A-L2</dt><dd>Branch at L, angle A°, length L2</dd>
+      <dt>leaf-W-H-M-V-A-S-alt|noalt</dt><dd>Leaf W×H, margin M, vein V, tilt A°, spacing S, alt arrangement</dd>
+      <dt>stem#…/branch#…/leaf#…/margin#…/vein#…</dt><dd>Hex colors</dd>
+    </dl>
+  </aside>
+
+  <main id="main">
+    <div id="pixel-grid"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

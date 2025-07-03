@@ -1,0 +1,78 @@
+/* style.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  /* auto-width based on content */
+  width: auto;
+  min-width: 220px;      /* ensure a sensible minimum */
+  padding: 16px;
+  background: #fafafa;
+  border-right: 1px solid #ddd;
+  /* no scrollbar */
+  overflow: visible;
+}
+
+#sidebar dl {
+  margin: 0 0 16px;
+}
+
+#sidebar dt {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+#sidebar dd {
+  margin: 2px 0 8px 12px;
+  font-size: 0.9em;
+  line-height: 1.2;
+}
+
+#input-form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#prompt {
+  width: 100%;
+  height: 80px;
+  font-size: 14px;
+}
+
+#generate {
+  align-self: flex-end;
+  padding: 6px 12px;
+}
+
+#main {
+  margin-left: calc(var(--sidebar-width, 250px) + 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#pixel-grid {
+  display: grid;
+  height: 100vh;
+  width: calc(100vh * 0.75);
+  grid-template-columns: repeat(300, 1fr);
+  grid-template-rows:    repeat(400, 1fr);
+}
+
+.pixel {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+}

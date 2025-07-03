@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                        https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Inherit dependency and plugin management from Spring Boot -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.5.3</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <!-- Your project coordinates -->
+  <groupId>com.verdantia</groupId>
+  <artifactId>verdara</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>verdara</name>
+  <description>Plant graphic generator and aging tool for Verdantia’s Virtual Botanical Lab</description>
+  <url>https://your.project.url/</url>
+
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>your-id</id>
+      <name>Your Name</name>
+      <email>you@example.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:git://github.com/your-org/verdara.git</connection>
+    <developerConnection>scm:git:ssh://github.com/your-org/verdara.git</developerConnection>
+    <url>https://github.com/your-org/verdara</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <properties>
+    <java.version>21</java.version>
+    <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+  </properties>
+
+  <dependencies>
+    <!-- Core Spring Boot -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+
+    <!-- Web MVC -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- Lombok for DTOs -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.30</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Testing -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Compile with annotation processing for Lombok -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.plugin.version}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.30</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+
+      <!-- Spring Boot Maven Plugin for building executable JAR -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
