@@ -74,7 +74,6 @@ public class DecoderService {
         cfg.setLeaf(leaf);
 
         String injectedPrompt = setDisease(addPresets(prompt));
-        System.out.println(injectedPrompt);
 
         for (String token : injectedPrompt.trim().split("\\s+")) {
             if (token.startsWith("screen-")) {
