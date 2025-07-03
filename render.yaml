@@ -1,7 +1,6 @@
 services:
   - type: web
     name: verdara
-    runtime: native
     buildCommand: ./mvnw clean package
     startCommand: java -jar target/verdara-0.0.1-SNAPSHOT.jar
     plan: free
